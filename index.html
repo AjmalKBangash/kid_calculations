@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            margin-top: 118px;
+            padding: 0%;
+            background: rgb(154,145,160);
+            background: linear-gradient(90deg, rgba(154,145,160,1) 34%, rgba(131,58,180,1) 100%); 
+        }
+
+        #container {
+            height: 420px;
+            width: 70vw;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid rgb(59, 59, 59);
+            border-radius: 5%;
+            background: rgb(131,58,180);
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(0,0,0,1) 49%, rgba(157,157,157,1) 100%);  
+        }
+
+        .blockk {
+            font-weight: 500;
+            font-size: large;
+            display: block;
+            height: 50px;
+            width: 500px;
+            border: 2px solid white;
+            border-radius: 9%;
+            margin: 25px;
+            padding: 0px 5px 0px 5px;
+            background: rgb(154,145,160);
+            background: linear-gradient(90deg, rgba(154,145,160,1) 0%, rgba(131,58,180,1) 100%); 
+        }
+
+        #calc {
+            padding: 0%;
+            margin-top: 0%;
+            margin-bottom:0%;
+            color: rgb(180, 174, 174);
+        }
+
+        .valuee {
+            font-weight: 500;
+            font-size:x-large;
+            margin: 0px 40px;
+            height: 50px;
+            width: 50px;
+            background: rgb(154,145,160);
+            background: linear-gradient(90deg, rgba(154,145,160,1) 0%, rgba(131,58,180,1) 100%); 
+
+        }
+
+        #Reset {
+            font-weight: 500;
+            font-size:x-large;
+            margin-bottom: 10px;
+            margin-top: 0%;
+            margin-left: 434px;
+            height: 50px;
+            width: 80px;
+            border-radius: 9%;
+            background: rgb(154,145,160);
+            background: linear-gradient(90deg, rgba(154,145,160,1) 0%, rgba(131,58,180,1) 100%); 
+        }
+
+        @media only screen and (max-width: 745px) {
+            .blockk {
+                height: 40px;
+                width: 400px;
+                margin: 20px;
+            }
+
+            #container {
+                height: 350px;
+                width: 70vw;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .valuee {
+                font-weight: 500;
+                font-size:large;
+                margin: 0px 40px;
+                height: 30px;
+                width: 30px;
+            }
+
+            #Reset {
+                font-weight: 500;
+                font-size:large;
+                margin-bottom: 7px;
+                margin-top: 0%;
+                margin-left: 333px;
+                height: 40px;
+                width: 80px;
+            }
+          }
+
+          @media only screen and (max-width: 590px) {
+            .blockk {
+                height: 40px;
+                width: 290px;
+                margin: 20px;
+            }
+
+            #container {
+                height: 500px;
+                width: 90vw;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .valuee {
+                display:inline-block;
+                font-weight: 300;
+                font-size:x-large;
+                margin: 10px 21px;
+                height: 40px;
+                width: 40px;
+            }
+
+            #Reset {
+                font-weight: 500;
+                font-size:large;
+                margin-bottom: 7px;
+                margin-top: 0%;
+                margin-left: 222px;
+                height: 40px;
+                width: 80px;
+            }
+          }
+
+    </style>
+</head>
+<body>
+
+    <!-- ******     Calculator     ****** -->
+    <div id="container">
+        <h1 id="calc" >Calculator</h1>
+        <form id="formm">
+            <input type="text" class="blockk" id="firsti" placeholder="ENTER NUM">
+            <input type="text" class="blockk" id="secondi" placeholder="ENTER NUM">
+            <input type="button" value="+" class="valuee" onclick="add()">
+            <input type="button" value="-" class="valuee" onclick="sub()"> 
+            <input type="button" value="*" class="valuee" onclick="mul()"> 
+            <input type="button" value="/" class="valuee" onclick="div()"> 
+            <input class="blockk" id="result" placeholder="RESULT" style="text-align: center;">
+        </form>
+        <input type="reset" id="Reset" onclick="resetResult()"> 
+    </div>
+    
+    <!-- ***************       javascript is added        **************** -->
+    <script>
+        function add(){
+            let x = document.getElementById("firsti").value;
+            let y = document.getElementById("secondi").value;
+            document.getElementById("result").value = Number(x) + Number(y) ;
+        }
+        
+        function sub(){
+            let x = document.getElementById("firsti").value;
+            let y = document.getElementById("secondi").value;
+            document.getElementById("result").value = Number(x) - Number(y) ;
+        }
+        
+        function mul(){
+            let x = document.getElementById("firsti").value;
+            let y = document.getElementById("secondi").value;
+            document.getElementById("result").value = Number(x) * Number(y) ;
+        }
+        
+        function div(){
+            let x = document.getElementById("firsti").value;
+            let y = document.getElementById("secondi").value;
+            document.getElementById("result").value = Number(x) / Number(y) ;
+        }
+
+        function resetResult(){
+            document.getElementById("firsti").value = "";
+            document.getElementById("secondi").value = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
